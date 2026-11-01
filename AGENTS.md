@@ -14,7 +14,8 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
 
 1. A feature starts as a plan: `plan.md` at the root (one at a time). Finished plans live in
    `docs/plans/done/`.
-2. The plan is split into GitHub issues: skill `plan-to-issues` (`.agents/skills/`). A human
+2. The plan is split into GitHub issues: skill `plan-to-issues` (`.agents/skills/`), which
+   says what every issue carries. A human
    reviews the split before anything is published. GitHub issues out of reach: files in
    `docs/issues/` (ADR 0004).
 3. Issues are worked by workers, one issue per worker, each on its own branch or worktree.

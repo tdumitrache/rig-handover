@@ -16,10 +16,28 @@ in a shell this agent can run.
 3. **Stop and show the table to the human.** Publish nothing until they approve it.
 4. Ask the human what every issue here must carry (fields, labels, wording), unless it is
    already written down in this session or in the repo.
+   This repo's answer (decided 2026-11-01, plan morning-digest). Every issue carries:
+
+   ```md
+   Source: plan.md § <n>
+
+   ## Scope
+   <what to build, from the plan's section, nothing added>
+
+   ## Done when
+   <the plan's "Done when" line, word for word>
+
+   ## Blocked by
+   <#n of each issue it needs, or "none">
+   ```
+
+   Label: `plan:<plan name from plan.md frontmatter>` (create it once with `gh label create`).
+   The reviewer sorts by the `Source:` line and the label, so both are required.
+
 5. Create each issue in dependency order, so blocked-by can cite real numbers:
 
    ```sh
-   gh issue create --title "<title>" --body-file <tmp.md>
+   gh issue create --title "<title>" --label plan:<name> --body-file <tmp.md>
    ```
 
 6. Record every issue URL from gh's output (not from memory) and reply with the list.
